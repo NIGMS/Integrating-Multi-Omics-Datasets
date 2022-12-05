@@ -1,0 +1,3 @@
+sample,fastq_1,fastq_2,strandedness
+control,gs://nextflowsinghallab/gse173380-rnaseq/fastq/SRR14328172.fastq.gz,,unstranded
+test,gs://nextflowsinghallab/gse173380-rnaseq/fastq/SRR14328175.fastq.gz,,unstranded
