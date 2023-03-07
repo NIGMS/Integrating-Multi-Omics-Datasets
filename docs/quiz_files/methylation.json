@@ -1,0 +1,46 @@
+[
+    {
+        "front": "How does DNA methylation modify the DNA?",
+        "back": "Through covalent addition of a methyl group to cytosine."
+    },
+    {
+        "front": "What adds methyl groups to cytosines?",
+        "back": "DNA methyltransferase (DNMT)."
+    },
+    {
+        "front": "Where on the DNA are the methyl groups added?",
+        "back": "Cytosine nucleotides and at the major groove."
+    },
+    {
+        "front": "How is DNA methylation differ from histone methylation/modification",
+        "back": "DNA is marked and permanently modified, histones leaves the DNA itself unmethylated."
+    },
+    {
+        "front": "How are DNA methylation patterns maintained?",
+        "back": "Through cell division and DNA synthesis"
+    },
+    {
+        "front": "Methylation status: zygote",
+        "back": "largely unmethylated"
+    },
+    {
+        "front": "Methylation status: cell differentiation",
+        "back": "patterns of methylation established"
+    },
+    {
+        "front": "Methylation status: meiosis",
+        "back": "methylation cleared"
+    },
+    {
+        "front": "Why does DNA methylation reset during meiosis?",
+        "back": "if an embryo begins with methylated DNA, many genes will never be expressed"
+    },
+    {
+        "front": "Hyper-methylation",
+        "back": "An increase in the epigenetic methylation of cytosine and adenosine residues in DNA"
+    },
+    {
+        "front": "Hypo-Methylation",
+        "back": " A decrease in the epigenetic methylation of cytosine and adenosine residues in DNA."
+    }
+]
