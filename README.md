@@ -9,7 +9,7 @@ This module will walk you through some of the techniques to integrate transcript
 
 The training compromises of three submodules: RNA-seq, RRBS, and Integration, although the main focus will be on the Integration submodule. The RNA-seq and RRBS submodules focus on essential data preprocessing and differential analysis, while the Integration submodule expands on some techniques to integrate transcriptomic and epigenetic data. If you are a beginner, we recommend going through each submodule and also referring to other modules specific to RNA-seq and Bisulfite data analysis before starting with this module.
 
-This module will cost you about $3.20 to run end to end, assuming you shutdown and delete all resources upon completion.
+This module will cost you about $2.00 to run end to end, assuming you shutdown and delete all resources upon completion.
 
 ## Overview of Page Contents
 
