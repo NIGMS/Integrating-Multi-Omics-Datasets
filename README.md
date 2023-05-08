@@ -1,11 +1,11 @@
 <!-- #region -->
 # University of North Dakota: Transcriptomic and Epigenetics Data Integration Module. 
 ---------------------------------
-<span style="color:red">[**Integration-Module-Overview.mp4 Placeholder**]</span>
+Watch this [Introduction Video](https://youtu.be/6c4C7KZxqZs) to learn more about the module.
 
 This module will walk you through some of the techniques to integrate transcriptomic and epigenetic data. We will use RNA-seq and Reduced-Representation Bisulfite Sequencing (RRBS) for this tutorial. The raw sequencing data is downloaded from the NCBI GEO website (Accession: GSE173380) and stored in Google Cloud buckets. Data processing could be performed using Nextflow pipelines to generate read counts from the raw sequencing data, or the read count table can be directly imported from GEO. Further downstream analysis is performed in Vertex AI's Jupyter notebook instance with R kernel. All the results are then pushed back to Google Cloud buckets for storage.
 
-<span style="color:red">[**UND-Intro.mp4 Placeholder**]</span>
+Next, watch [this video](https://youtu.be/3wwVNDOEQl0) to learn more about the module.
 
 The training compromises of three submodules: RNA-seq, RRBS, and Integration, although the main focus will be on the Integration submodule. The RNA-seq and RRBS submodules focus on essential data preprocessing and differential analysis, while the Integration submodule expands on some techniques to integrate transcriptomic and epigenetic data. If you are a beginner, we recommend going through each submodule and also referring to other modules specific to RNA-seq and Bisulfite data analysis before starting with this module.
 
