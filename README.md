@@ -1,3 +1,4 @@
+![course card](images/UND-course-card.png)
 # University of North Dakota: Transcriptomic and Epigenetics Data Integration Module. 
 ---------------------------------
 Watch this [Introduction Video](https://youtu.be/6c4C7KZxqZs) to learn more about the module.
