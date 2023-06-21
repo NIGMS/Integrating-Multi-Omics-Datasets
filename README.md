@@ -52,9 +52,10 @@ UND multi-omics repository contains three main folders representing each submodu
 If you are using Nextflow outside of NIH CloudLab you must set up a service account and add your service account to your notebook permissions before creating the notebook. Follow section 2 of the accompanying [How To document](https://github.com/NIGMS/NIGMS-Sandbox/blob/main/docs/HowToCreateNextflowServiceAccount.md) for instructions. If you are executing this tutorial with an NIH CloudLab account your default Compute Engine service account will have all required IAM roles to run the nextflow portion.
 
 #### *Creating a user managed notebook* 
-From the console, select VertexAI Workbench --> New User Managed Notebook --> R4.2.
+From the console, select VertexAI Workbench --> New User Managed Notebook Customize --> Debian 10 --> R 4.2.
 
-![](./images/User-Notebook-creation.png)
+![Custome notebook](./images/Customize-notebook.png)
+![Create R notebook](./images/Create-R-notebook.png)
 This module uses a machineType of n1-standard-8. Make sure to select advanced options --> machineType n1-standard-8 when creating your notebook. 
 
 #### *Cloned repository structure*
