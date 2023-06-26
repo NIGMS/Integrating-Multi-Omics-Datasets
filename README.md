@@ -1,4 +1,4 @@
-![course card](images/UND-course-card.png)
+![course card](images/UND-course-card-2.png)
 Image adapted from https://doi.org/10.1016/j.jbi.2020.103466
 
 # University of North Dakota: Transcriptomic and Epigenetics Data Integration Module. 
