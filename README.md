@@ -62,7 +62,7 @@ In the new instance window, scroll down and select **Advanced Options**
 
 In the Environment tab, select the appropriate operating system and environment. For this module you should select Debian 11 and R 4.2. Make sure to click the **Enable Idle Shutdown** button in the Machine type tab as shown in the screenshot below. Finally, in the Machine type tab select n1-standard-8 from the dropdown box and click **Create**.
 
-![Enable Idle Shutdown](images/Enable_auto_shutdown.png)
+![Enable Idle Shutdown](images/enable_auto_shutdown_mins.png)
 
 
 #### *Cloned repository structure*
