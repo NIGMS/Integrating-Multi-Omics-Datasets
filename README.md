@@ -67,7 +67,7 @@ In the Environment tab, select the appropriate operating system and environment.
 
 #### *Cloned repository structure*
 
-![](./images/Initial-screen-after-clone.png)
+![](/images/Initial-screen-after-clone.png)
 
 ### *Running the Modules*
 
