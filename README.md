@@ -52,18 +52,8 @@ UND multi-omics repository contains three main folders representing each submodu
 If you are using Nextflow outside of NIH CloudLab you must set up a service account and add your service account to your notebook permissions before creating the notebook. Follow section 2 of the accompanying [How To document](https://github.com/NIGMS/NIGMS-Sandbox/blob/main/docs/HowToCreateNextflowServiceAccount.md) for instructions. If you are executing this tutorial with an NIH CloudLab account your default Compute Engine service account will have all required IAM roles to run the nextflow portion.
 
 #### *Creating a user managed notebook* 
-From the console select Vertex AI and navigate to Workbench, click **Create New**. Make sure User-Managed Notebooks is highlighted, as shown in the screenshot below. 
 
-![Create New user managed notebook](images/Create_new_notebook.png)
-
-In the new instance window, scroll down and select **Advanced Options**
-
-![Select Advanced Options](images/Advanced_options.png)
-
-In the Environment tab, select the appropriate operating system and environment. For this module you should select Debian 11 and R 4.2. Make sure to click the **Enable Idle Shutdown** button in the Machine type tab as shown in the screenshot below. Finally, in the Machine type tab select n1-standard-8 from the dropdown box and click **Create**.
-
-![Enable Idle Shutdown](images/enable_auto_shutdown_mins.png)
-
+Follow the steps highlighted [here](https://github.com/STRIDES/NIHCloudLabGCP/blob/main/docs/vertexai.md) to create a new user-managed notebook in Vertex AI. Follow steps 1-8 and be especially careful to enable idle shutdown as highlighted in step 7. For this module you should select Debian 10 and R 4.2 in the Environment tab in step 5. In step 6 in the Machine type tab, select n1-standard-8 from the dropdown box.
 
 #### *Cloned repository structure*
 
