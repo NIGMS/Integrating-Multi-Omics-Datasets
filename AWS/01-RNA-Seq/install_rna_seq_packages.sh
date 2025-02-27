@@ -3,13 +3,13 @@
 conda update -n base -c defaults conda -y
 
 # Create a conda environment
-conda create -n r-package -y
+conda create -n r-package-1 -y
 
 # Consider addressing your conda initialization instead.
 source ~/.bashrc
 
 # Activate the Conda Environment
-conda activate r-package
+conda activate r-package-1
 
 # Install packages
 conda install -c conda-forge -c bioconda bioconductor-deseq2 -y
@@ -30,4 +30,4 @@ R -e 'install.packages(c("NMF","IRkernel"), repos="http://cran.rstudio.com/")'
 
 
 # Install the kernel specification for Jupyter
-R -e 'IRkernel::installspec(name = "R-Custom-Kernel", displayname = "R-Custom-Kernel")' 
+R -e 'IRkernel::installspec(name = "R-RNA-Seq", displayname = "R-RNA-Seq")' 
