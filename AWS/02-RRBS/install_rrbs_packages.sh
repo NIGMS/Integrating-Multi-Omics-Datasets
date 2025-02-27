@@ -3,20 +3,17 @@
 conda update -n base -c defaults conda -y
 
 # Create a conda environment
-conda create -n r-package-3  r-base -y
+conda create -n r-package-2 conda-forge r-base=4.2.2 -y
 
 # Consider addressing your conda initialization instead.
 source ~/.bashrc
 
 # Activate the Conda Environment
-conda activate r-package-3
+conda activate r-package-2
 
 # Install packages
 conda install bioconda::bioconductor-genomicranges -y
 
-R -e 'remove.packages("data.table")'
-conda install -c conda-forge zlib -y
-conda install conda-forge::r-data.table -y
 conda install bioconda::bioconductor-methylkit -y
 
 conda install bioconda::bioconductor-genomation -y
