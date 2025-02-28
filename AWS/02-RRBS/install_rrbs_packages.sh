@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create a conda environment
-conda create -n r-package-2 conda-forge r-base=4.2.2 r-essentials -y
+conda create -n r-package-2 r-base=4.2.2 -y
 
 # Consider addressing your conda initialization instead.
 source ~/.bashrc
@@ -10,9 +10,9 @@ source ~/.bashrc
 conda activate r-package-2
 
 # Install packages
-conda install bioconda::bioconductor-genomicranges -y
-
 conda install bioconda::bioconductor-methylkit -y
+
+conda install bioconda::bioconductor-genomicranges -y
 
 conda install bioconda::bioconductor-genomation -y
 
