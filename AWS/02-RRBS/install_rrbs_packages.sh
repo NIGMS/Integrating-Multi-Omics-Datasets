@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create a conda environment
-conda create -n r-package-2 conda-forge r-base=4.2.3 -y
+conda create -n r-package-2 conda-forge r-base=4.2.2 r-essentials -y
 
 # Consider addressing your conda initialization instead.
 source ~/.bashrc
