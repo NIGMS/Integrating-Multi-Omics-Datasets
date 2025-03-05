@@ -39,6 +39,21 @@ conda install bioconda::bioconductor-motifmatchr -y
 
 conda install bioconda::bioconductor-tfbstools -y 
 
+conda install conda-forge::r-doparallel -y
+
+conda install bioconda::bioconductor-bsgenome.hsapiens.ucsc.hg38 -y
+
+conda install -c conda-forge r-data.table=1.16.4 -y
+conda install bioconda::bioconductor-methylkit -y
+
+conda install bioconda::bioconductor-genomation -y
+
+conda install bioconda::bioconductor-deseq2 -y
+
+conda install conda-forge::r-tidyverse -y
+
+conda install bioconda::bioconductor-motifstack -y
+
 
 
 R -e 'install.packages(c("IRkernel"), repos="http://cran.rstudio.com/")'
