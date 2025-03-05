@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Create a conda environment
-conda create -n r-package-3 r-base=4.3.3 -y
+conda create -n r-integration r-base=4.3.3 -y
 
 # Consider addressing your conda initialization instead
 source ~/.bashrc
 
 # Activate the Conda Environment
-conda activate r-package-3
+conda activate r-integration
 
 # Install packages
 
