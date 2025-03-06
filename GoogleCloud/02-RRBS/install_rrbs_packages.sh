@@ -21,6 +21,8 @@ conda install conda-forge::r-ggforce -y
 
 conda install conda-forge::r-tidyverse -y
 
+conda install -c conda-forge jupyterlab  -y
+
 R -e 'install.packages(c("IRkernel","ggplot2"), repos="http://cran.rstudio.com/")'
 
 # Install the kernel specification for Jupyter

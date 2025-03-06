@@ -54,7 +54,7 @@ conda install conda-forge::r-tidyverse -y
 
 conda install bioconda::bioconductor-motifstack -y
 
-
+conda install -c conda-forge jupyterlab -y
 
 R -e 'install.packages(c("IRkernel"), repos="http://cran.rstudio.com/")'
 

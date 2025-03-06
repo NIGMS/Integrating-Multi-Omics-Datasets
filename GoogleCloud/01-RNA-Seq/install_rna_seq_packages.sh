@@ -24,6 +24,8 @@ conda install bioconda::bioconductor-genomation -y
 
 conda install bioconda::bioconductor-genomeinfodb -y
 
+conda install -c conda-forge jupyterlab  -y
+
 R -e 'install.packages(c("NMF","IRkernel"), repos="http://cran.rstudio.com/")'
 
 
