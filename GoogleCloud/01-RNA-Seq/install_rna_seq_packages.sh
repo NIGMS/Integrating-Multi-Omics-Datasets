@@ -1,15 +1,13 @@
 #!/bin/bash
 
-conda update -n base -c defaults conda -y
-
 # Create a conda environment
-conda create -n r-package-1 -y
+conda create -n r-rna-seq r-base=4.3.3 -y
 
 # Consider addressing your conda initialization instead.
 source ~/.bashrc
 
 # Activate the Conda Environment
-conda activate r-package-1
+conda activate r-rna-seq
 
 # Install packages
 conda install -c conda-forge -c bioconda bioconductor-deseq2 -y

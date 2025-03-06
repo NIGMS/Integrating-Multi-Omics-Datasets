@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # Create a conda environment
-conda create -n r-package-2 r-base=4.2.2 -y
+conda create -n r-rrbs r-base=4.3.3 -y
 
 # Consider addressing your conda initialization instead.
 source ~/.bashrc
 
 # Activate the Conda Environment
-conda activate r-package-2
+conda activate r-rrbs
 
 # Install packages
+conda install -c conda-forge r-data.table=1.16.4 -y
 conda install bioconda::bioconductor-methylkit -y
 
 conda install bioconda::bioconductor-genomicranges -y
