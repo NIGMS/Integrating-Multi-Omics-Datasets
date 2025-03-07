@@ -2,31 +2,32 @@
 Image adapted from https://doi.org/10.1016/j.jbi.2020.103466
 
 # University of North Dakota: Transcriptomic and Epigenetics Data Integration Module. 
----------------------------------
+
+## **Contents**
+
++ [Introduction](#introduction)
++ [Learning Objectives](#learningobjectives)
++ [Overview](#overview)
++ [Software Requirements](#software-requirements)
++ [Dataset](#dataset)
++ [Funding](#funding)
++ [References](#references)
+
+## **Introduction**
+
 Watch this [Introduction Video](https://youtu.be/6c4C7KZxqZs) to learn more about the module.
 
-This module will walk you through some of the techniques to integrate transcriptomic and epigenetic data. We will use RNA-seq and Reduced-Representation Bisulfite Sequencing (RRBS) for this tutorial. The raw sequencing data is downloaded from the NCBI GEO website (Accession: GSE173380) and stored in Google Cloud buckets. Data processing could be performed using Nextflow pipelines to generate read counts from the raw sequencing data, or the read count table can be directly imported from GEO. Further downstream analysis is performed in Vertex AI's Jupyter notebook instance with R kernel. All the results are then pushed back to Google Cloud buckets for storage.
+This module will walk you through some of the techniques to integrate transcriptomic and epigenetic data. We will use RNA-seq and Reduced-Representation Bisulfite Sequencing (RRBS) for this tutorial. The raw sequencing data is downloaded from the NCBI GEO website (Accession: GSE173380) and stored in Google Cloud and Amazon S3 buckets. Data processing could be performed using Nextflow pipelines to generate read counts from the raw sequencing data, or the read count table can be directly imported from GEO. Further downstream analysis is performed in a Jupyter notebook instance with an R kernel. All the results are then pushed back to Google Cloud or Amazon S3 buckets for storage.
 
 Next, watch [this video](https://youtu.be/3wwVNDOEQl0) to learn more about the module.
 
 The training compromises of three submodules: RNA-seq, RRBS, and Integration, although the main focus will be on the Integration submodule. The RNA-seq and RRBS submodules focus on essential data preprocessing and differential analysis, while the Integration submodule expands on some techniques to integrate transcriptomic and epigenetic data. If you are a beginner, we recommend going through each submodule and also referring to other modules specific to RNA-seq and Bisulfite data analysis before starting with this module.
 
-This module will cost you about $3.20 to run end to end, assuming you shutdown and delete all resources upon completion.
+This module will cost you about $4.00 to run end to end, assuming you shutdown and delete all resources upon completion.
 
-## Overview of Page Contents
+## **Learning Objectives**
 
-+ [Getting Started](#getting-started)
-+ [Overview](#overview)
-+ [Software Requirements](#software-requirements)
-+ [Workflow Diagram](#workflow-diagrams)
-+ [Dataset](#dataset)
-+ [Troubleshooting](#troubleshooting)
-+ [Funding](#funding)
-+ [References](#references)
-
-## **Getting Started**
-
-These submodules were developed to be used on cloud platforms. Although these submodules were made using the Google Cloud Platform, the Jupyter notebooks should work on other cloud services like Amazon AWS and Microsoft Azure with some minor changes in data storage and handling. The initial steps to create a virtual machine instance may vary depending on the cloud service used. Following are some of the skills you can gain through this tutorial and some prerequisites to follow along with these submodules. 
+These submodules were developed to be used on cloud platforms. These submodules were made using the Google Cloud Platform (GCP) and Amazon Web Services (AWS). The initial steps to create a virtual machine instance may vary depending on the cloud service used. Following are some of the skills you can gain through this tutorial and some prerequisites to follow along with these submodules. 
 
 Skills you will gain:
 1. Statistics
@@ -44,31 +45,6 @@ Prerequisites - This course requires basic knowledge of the following:
 4. Basic understanding of different omic technologies and online databases 
 5. Basic Knowledge of Cloud Computing Environment
 
-### *Setting-up the Environment*
-
-UND multi-omics repository contains three main folders representing each submodule. Every folder has its accompanying Jupyter notebook, if applicable. To start with this tutorial, you will need to set up your Google Cloud Platform, Vertex AI, and Jupyter notebook instance. 
-
-#### *Creating a user managed notebook* 
-
-Follow the steps highlighted [here](https://github.com/STRIDES/NIHCloudLabGCP/blob/main/docs/vertexai.md) to create a new user-managed notebook in Vertex AI. Follow steps 1-8 and be especially careful to enable idle shutdown as highlighted in step 7. For this module you should select Debian 10 and R 4.2 in the Environment tab in step 5. In step 6 in the Machine type tab, select n1-standard-8 from the dropdown box.
-
-To clone this repository, use the Git command `git clone https://github.com/NIGMS/Integrating-Multi-Omics-Datasets.git` in the dropdown menu option in Jupyter notebook. Please make sure you only enter the link for the repository that you want to clone. There are other bioinformatics related learning modules available in the [NIGMS Repository](https://github.com/NIGMS). Before starting this module, it is recommended to go through basic RNA-seq and Methylation analysis modules. Below is a screenshot of this current repository when cloned in Jupyter notebook using Git.
-
-![](/images/Initial-screen-after-clone.png)
-
-#### Optional: *Creating a Nextflow Service Account*
-If you are using Nextflow outside of NIH CloudLab you must set up a service account and add your service account to your notebook permissions before creating the notebook. Follow section 2 of the accompanying [How To document](https://github.com/NIGMS/NIGMS-Sandbox/blob/main/docs/HowToCreateNextflowServiceAccount.md) for instructions. If you are executing this tutorial with an NIH CloudLab account your default Compute Engine service account will have all required IAM roles to run the nextflow portion.
-
-### *Running the Modules*
-
-The cloned repository has three folders for each submodule called RNA-Seq, RRBS, and Integration. All notebooks inside these submodules are designed to run in the R kernel. Please check that the right top of the notebook says R and not Python 3. It is highly recommended to start with the RNA-Seq submodule, followed by RRBS, and finally, Integration. All the submodule folders consist of one .ipynb Jupyter notebook and accompanying files required for the analysis.
-
-The initial cells of the notebook for RNA-Seq and RRBS submodules contain data pre-processing commands, which are done through Nextflow. Please follow other modules like [Transcriptome-Assembly-Refinement-and-Applications](https://github.com/NIGMS/Transcriptome-Assembly-Refinement-and-Applications) or [Nextflow nf-core/rnaseq](https://nf-co.re/rnaseq) for learning pre-processing through Nextflow. If Nextflow is installed correctly, the Jupyter notebook should be able to launch Nextflow and perform all the pre-processing by just running the cell and without requiring any further user input. If the command output of Nextflow is not displayed concisely, you can copy the command inside the quotes ("~/nextflow run ....") and execute it in a terminal window. Please make sure your path in the command is correct. Notebook cells with Nextflow commands will take longer to execute as they perform multiple computationally heavy tasks. RNA-seq and Bisulfite sequencing have dedicated tutorials where the analysis is explained in more detail. It is recommended to refer to those tutorials first, as this tutorial's primary focus is on integrating transcriptomic and epigenetic data. 
-
-For RNA-Seq and Bisulfite sequencing data, further pre-processing and normalization is performed using R packages. The list of all the packages and versions is provided below under software requirements. Differential analysis, enrichment analysis, and visualization are performed in the same notebook. Further explanation of the code is provided in the markdown cells of the notebook. The Integration submodule uses the processed data results from RNA-seq and RRBS submodules to incorporate the datasets further and provide a better understanding of the experiment.
-
-Now, you can explore the tutorial and run code blocks from each Jupyter notebook from top to bottom. If you are new to Jupyter notebooks, please follow the documentation or look for tutorials online. 
-
 ## **Overview** 
 
 Although the main focus of this tutorial is the integration of transcriptomic and epigenetic data, it also teaches how to run standard RNA-seq and Bisulfite sequencing (RRBS) workflows in the cloud. It is recommended to run the modules in the following order.
@@ -84,41 +60,11 @@ Although the main focus of this tutorial is the integration of transcriptomic an
 
 ## **Software Requirements**
 
-The R session and package information at the time of tutorial development can be found below:
-+ [R session Information](./docs/sessionInfo.txt)
-+ [R Installed Package Versions](./docs/packages_version.csv)
-+ [Conda Environment](./docs/conda_environment.yml)
-
-These modules should be on a machine type of 'n1-standard-8'. 
-
-## **Workflow Diagrams**
-
-![](./images/architecture.png)
-
-As seen in the above figure, we have downloaded the data from the NCBI GEO website with accession number GSE173380. Sample data is already provided in the `gs://nigms-sandbox/nosi-und` Google Cloud bucket. There is no need to download the data again unless you want to run the optional Nextflow preprocessing step on the entire dataset (which could be computationally expensive). In the second step of submodule 1 and 2, Nextflow, in collaboration with Google Life Sciences API and Vertex AI, is used to perform the preprocessing. Nextflow works as a workflow manager, which enables scalable and reproducible scientific workflows using containers. Google Life Sciences API is a suite of tools and services for managing, processing, and transforming life science data where it creates and manages clusters and virtual machines. It helps to split the job into multiple jobs and assigns each job to a set of designated virtual machines. Vertex AI, on the other hand, behaves like an interface to manage and execute the process. 
-
-After initial preprocessing using Nextflow, further preprocessing, normalization, clustering analysis, differential analysis, and visualization is done in Vertex AI's Jupyter notebook using the R kernel. The results are written in the current working directory inside the Vertex AI instance and transferred to cloud buckets for storage. In the fourth step, we will extract the data from step two and three to use for the multi-omics module's integration analysis. The integrative analysis is also performed using Vertex AI's Jupyter notebook using the R kernel. We will use multi-omics integrative techniques like correlation tests, overlaps and enrichment colocalization, functional and pathway relation, and motifs search. The results from these techniques will be explored in the notebook and then transferred to cloud storage for future reference.   
+The R (version 4.3.3) package information is located in a bash script file associated with each submodule, reflecting the state at the time of tutorial development.
 
 ## **Dataset**
 
 The dataset for this tutorial is extracted from GEO website accession number GSE173380 [1]. This dataset is publicly available on the GEO website. For initial pre-processing using Nextflow, only a sample of this data is used to speed up the processing and reduce heavy computation. For sampling, only two files/runs are used for RNA-Seq and bisulfite sequencing, which are pulled from cloud storage buckets. After demonstrating the initial pre-processing steps with a sample dataset, we use the gene expression and methylation files available under the same accession from the supplementary file section at GEO. These files are provided in the repository and are used for further downstream analysis.
-
-## **Troubleshooting**
-
-+ If you are having issues with attaching a Google Cloud bucket to Jupyter notebook, it is recommended to use the user-managed notebooks and not Google managed notebooks while creating a new instance under Vertex AI.
-
-+ Hexbin package must be installed on top of ggplot to create meanSDPlot in RNA-seq downstream analysis workflow.
-
-+ Make sure you do not use underscore (_) while naming the storage buckets. Nextflow pipelines may not work if you use underscore due to DNS compatibility issues. 
-
-+ If you make any changes to folder permissions and it still does not work, please try to restart the kernel. 
-
-+ If the Nextflow command output display is distorted inside Jupyter notebook, try to run the same command in the terminal or Python kernel. Please make sure to change the command syntax if you plan to use Python kernel for Nextflow. The command inside quotes ("~/nextflow run ....") remains the same, but the rest of the syntax may change depending on if you are using terminal or python kernel. 
-
-+ If any package does not install, please try the following steps:
-    + Open terminal using New launcher (+ button in blue on the top left corner under File and Edit dropdown)
-    + Open R with admin rights using command > sudo R
-    + Install clusterProfiler > `BiocManager::install("package-name")`
 
 ## **Funding**
 
