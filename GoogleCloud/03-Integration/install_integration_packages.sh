@@ -59,4 +59,4 @@ conda install -c conda-forge jupyterlab -y
 R -e 'install.packages(c("IRkernel"), repos="http://cran.rstudio.com/")'
 
 # Install the kernel specification for Jupyter
-R -e 'IRkernel::installspec(name = "R-Intergration", displayname = "R-Intergration")' 
+R -e 'IRkernel::installspec(name = "R-Integration", displayname = "R-Integration")' 
