@@ -38,3 +38,22 @@ Now, you can explore the tutorial and run code blocks from each Jupyter notebook
 As seen in the above figure, we have downloaded the data from the NCBI GEO website with accession number GSE173380. Sample data is already provided in the `gs://nigms-sandbox/nosi-und` Google Cloud bucket. There is no need to download the data again unless you want to run the optional Nextflow preprocessing step on the entire dataset (which could be computationally expensive). In the second step of submodule 1 and 2, Nextflow, in collaboration with Google Batch API and Vertex AI, is used to perform the preprocessing. Nextflow works as a workflow manager, which enables scalable and reproducible scientific workflows using containers. Google Life Sciences API is a suite of tools and services for managing, processing, and transforming life science data where it creates and manages clusters and virtual machines. It helps to split the job into multiple jobs and assigns each job to a set of designated virtual machines. Vertex AI, on the other hand, behaves like an interface to manage and execute the process. 
 
 After initial preprocessing using Nextflow, further preprocessing, normalization, clustering analysis, differential analysis, and visualization is done in Vertex AI's Jupyter notebook using the R kernel. The results are written in the current working directory inside the Vertex AI instance and transferred to cloud buckets for storage. In the fourth step, we will extract the data from step two and three to use for the multi-omics module's integration analysis. The integrative analysis is also performed using Vertex AI's Jupyter notebook using the R kernel. We will use multi-omics integrative techniques like correlation tests, overlaps and enrichment colocalization, functional and pathway relation, and motifs search. The results from these techniques will be explored in the notebook and then transferred to cloud storage for future reference.   
+
+## Gemini (Optional)
+
+Generative AI is available for this tutorial in the form of Gemini if you would like to use it. To run it, please reference Submodule 1-RNA-Seq, or run the following code within a submodule notebook. You will need to save the util folder with the gemini.py file in the same directory as the notebook where you are running Gemini.
+
+```!pip install -q google-generativeai google-cloud-secret-manager
+!pip install -q git+https://github.com/NIGMS/NIGMS-Sandbox-Repository-Template.git#subdirectory=llm_integrations
+!pip install -q ipywidgets
+
+import sys
+import os
+util_path = os.path.join(os.getcwd(), 'util')
+if util_path not in sys.path:
+    sys.path.append(util_path)
+
+from gemini import run_gemini_widget, create_gemini_chat_widget 
+from IPython.display import display
+
+run_gemini_widget()
