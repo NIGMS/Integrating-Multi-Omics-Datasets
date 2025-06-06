@@ -1,12 +1,15 @@
-![course card](images/UND-course-card-2.png)
+# Transcriptomic and Epigenetics Data Integration Module
+## University of North Dakota
+<br>
+<p align="center">
+    <img src="images/UND-course-card-2.png" width="400" />
+</p>
 Image adapted from https://doi.org/10.1016/j.jbi.2020.103466
-
-# University of North Dakota: Transcriptomic and Epigenetics Data Integration Module. 
 
 ## **Contents**
 
 + [Introduction](#introduction)
-+ [Learning Objectives](#learningobjectives)
++ [Learning Objectives](#learning-objectives)
 + [Overview](#overview)
 + [Software Requirements](#software-requirements)
 + [Dataset](#dataset)
